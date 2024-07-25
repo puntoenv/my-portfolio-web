@@ -1,10 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Portfolio</h1>
+    <section
+      class="w-full lg:w-[740px] mx-auto py-44 text-center grid place-items-center gap-y-2"
+    >
+      <img
+        class="rounded-full size-48"
+        src="https://github.com/puntoenv.png"
+        alt="puntoenv-photo"
+      />
+      <h1 class="text-yellow-600 dark:text-yellow-300 text-5xl font-bold">
+        Sebastian Peralta
+      </h1>
+      <h2 class="text-2xl text-wrap space-y-1">
+        <strong class="uppercase text-yellow-900 dark:text-yellow-600">
+          desarrollador frontend
+        </strong>
+        <p>
+          <span class="opacity-90"> Especializado en </span>
+          <em> webs interactivas y dinamicas</em>
+          <span class="opacity-90"> orientadas a la, </span>
+          <em> experiencia del usuario</em>.
+        </p>
+      </h2>
+      <a
+        href="https://www.linkedin.com/in/puntoenv/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex justify-center items-center"
+      >
+        <Badge>#OPEN TO WORK</Badge>
+      </a>
+      <ul>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/puntoenv/"
+            class="flex gap-2 justify-center items-center"
+          >
+            <LinkedInIcon class="size-6 inline-block" />
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </section>
   </main>
 </Layout>
