@@ -3,17 +3,22 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <section
-      class="w-full lg:w-[740px] mx-auto py-44 text-center grid place-items-center gap-y-2"
+      class="w-full lg:w-[740px] mx-auto pt-56 text-center grid place-items-center gap-y-2 relative"
     >
-      <img
-        class="rounded-full size-48"
+      <Image
+        class="rounded-full absolute z-0 left-[calc(50%_-_75px)] top-[10%]"
+        id="profile-picture"
+        height={150}
+        width={150}
         src="https://github.com/puntoenv.png"
-        alt="puntoenv-photo"
+        alt="puntoenv"
+        loading="eager"
       />
       <h1 class="text-yellow-600 dark:text-yellow-300 text-5xl font-bold">
         Sebastian Peralta

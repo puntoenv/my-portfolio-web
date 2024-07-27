@@ -1,8 +1,50 @@
-<header class="flex justify-center items-center py-5 w-[1220px] mx-auto">
-  <nav class="flex flex-row gap-x-10 divide-opacity-80">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/contact">Contact</a>
+---
+import { Image } from "astro:assets";
+---
+
+<header
+  class="flex justify-center items-center mx-auto sticky z-10 top-8 bg-black w-min rounded-full h-10 mt-8 px-2 text-white"
+>
+  <nav
+    class="flex flex-row w-full justify-center items-center gap-2 sm:gap-4 divide-opacity-80 text-center [&_div]:w-16 [&_div]:sm:w-20 text-sm sm:text-lg [&_div]:grid [&_div]:place-content-center"
+  >
+    <a href="#">
+      <div>Home</div>
+    </a>
+    <a href="/about">
+      <div>About</div>
+    </a>
+    <div>
+      <!-- <Image
+        class="rounded-full"
+        height={50}
+        width={50}
+        src="https://github.com/puntoenv.png"
+        alt="puntoenv"
+        loading="eager"
+      /> -->
+      <svg
+        class="w-[50px] h-[50px] rounded-full"
+        role="img"
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path fill={`#00091d`} d="M0 0h200v200H0z"></path>
+          <path fill="#e5e7eb" d="M31 164h14v14H31z"></path>
+          <g fill="#e5e7eb" fill-rule="nonzero">
+            <path
+              d="M91.986 178.41v-7.75H66.288v-12.52h23.094v-7.75H66.288v-10.198h24.82v-7.782H57v46zM108.585 178.41v-29.997l18.545 29.997h9.319v-46h-8.63v30.72l-18.826-30.72h-9.037v46zM167.92 178.41l16.474-46h-9.852l-11.265 34.045-11.641-34.045h-10.073l16.442 46z"
+            ></path>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <a href="/projects">
+      <div>Projects</div>
+    </a>
+    <a href="/contact">
+      <div>Contact</div>
+    </a>
   </nav>
 </header>
