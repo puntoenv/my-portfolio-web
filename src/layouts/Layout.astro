@@ -2,29 +2,30 @@
 import Header from "../components/Header.astro";
 interface Props {
   title: string;
+  description: string;
 }
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Portafolio Web | Sebastian Peralta</title>
+    <title>{title}</title>
+    <script src="/src/index.ts"></script>
   </head>
   <body class="relative">
     <div
-      class="absolute h-[300dvh] w-full bg-white dark:bg-[#000000] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+      class="absolute min-h-full w-full items-center p-4 bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
     >
       <Header />
       <slot />
     </div>
   </body>
-  <script is:inline src="/src/index.ts"></script>
 </html>
 <style is:global>
   @import "/src/globals.css";

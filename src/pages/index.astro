@@ -1,58 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Badge from "../components/Badge.astro";
-import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import { Image } from "astro:assets";
+import Pills from "../components/Pills.astro";
+import Banner from "../components/Banner.astro";
+import Experience from "../components/Experience.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <section
-      class="w-full lg:w-[740px] mx-auto pt-56 text-center grid place-items-center gap-y-2 relative"
-    >
-      <Image
-        class="rounded-full absolute z-0 left-[calc(50%_-_75px)] top-[10%]"
-        id="profile-picture"
-        height={150}
-        width={150}
-        src="https://github.com/puntoenv.png"
-        alt="puntoenv"
-        loading="eager"
-      />
+<Layout
+  title="Sebastian Peralta | Frontend Web Developer"
+  description="Soy Sebastian Peralta, Frontend Web Developer con JavaScript, TypeScript, React. Descubre proyectos innovadores y modernos que transforman la web."
+>
+  <main class="flex flex-col">
+    <section class="mx-auto lg:w-[720px] pt-48 flex flex-col gap-y-4 relative">
+      <article class="flex items-center gap-x-4">
+        <Image
+          class="rounded-full"
+          height={75}
+          width={75}
+          src="https://github.com/puntoenv.png"
+          alt="puntoenv"
+          loading="eager"
+        />
+      </article>
       <h1 class="text-yellow-600 dark:text-yellow-300 text-5xl font-bold">
         Sebastian Peralta
       </h1>
-      <h2 class="text-2xl text-wrap space-y-1">
-        <strong class="uppercase text-yellow-900 dark:text-yellow-600">
-          desarrollador frontend
-        </strong>
-        <p>
-          <span class="opacity-90"> Especializado en </span>
-          <em> webs interactivas y dinamicas</em>
-          <span class="opacity-90"> orientadas a la, </span>
-          <em> experiencia del usuario</em>.
-        </p>
-      </h2>
-      <a
-        href="https://www.linkedin.com/in/puntoenv/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex justify-center items-center"
-      >
-        <Badge>#OPEN TO WORK</Badge>
-      </a>
-      <ul>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/puntoenv/"
-            class="flex gap-2 justify-center items-center"
-          >
-            <LinkedInIcon class="size-6 inline-block" />
-            LinkedIn
-          </a>
-        </li>
-      </ul>
+      <Banner />
+      <Pills />
+      <Experience />
     </section>
-  </main>
-</Layout>
+  </main></Layout
+>
