@@ -1,19 +1,19 @@
 ---
 import ExperienceItem from "@components/ExperienceItem.astro";
+import EXPERIENCE from "@data/experience.json";
 ---
 
 <ol
-  class="relative border-s border-gray-200 dark:border-gray-700 space-y-8 pl-4"
+  class="relative border-s border-gray-200 dark:border-gray-700 space-y-8 mt-4 pl-4"
 >
-  <ExperienceItem
-    title="Eva Seguros"
-    latest
-    time="Released on January 13th, 2022"
-    description="Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
-  />
-  <ExperienceItem
-    title="Eva Seguros"
-    time="Released on January 13th, 2022"
-    description="Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
-  />
+  {
+    EXPERIENCE.map(({ title, latest, time, description }) => (
+      <ExperienceItem
+        title={title}
+        latest={latest}
+        time={time}
+        description={description}
+      />
+    ))
+  }
 </ol>

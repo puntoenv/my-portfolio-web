@@ -16,7 +16,13 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script src="/src/index.ts"></script>
+    <script>
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
+    </script>
   </head>
   <body class="relative">
     <div

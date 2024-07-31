@@ -10,9 +10,9 @@ import Experience from "../components/Experience.astro";
   title="Sebastian Peralta | Frontend Web Developer"
   description="Soy Sebastian Peralta, Frontend Web Developer con JavaScript, TypeScript, React. Descubre proyectos innovadores y modernos que transforman la web."
 >
-  <main class="flex flex-col">
-    <section class="mx-auto lg:w-[720px] pt-48 flex flex-col gap-y-4 relative">
-      <article class="flex items-center gap-x-4">
+  <main class="flex flex-col items-center mx-auto lg:w-[720px] pt-48">
+    <section class="flex flex-col gap-y-4">
+      <article>
         <Image
           class="rounded-full"
           height={75}
@@ -27,7 +27,9 @@ import Experience from "../components/Experience.astro";
       </h1>
       <Banner />
       <Pills />
+    </section>
+    <section class="pl-4 w-full">
       <Experience />
     </section>
-  </main></Layout
->
+  </main>
+</Layout>

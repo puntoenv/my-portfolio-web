@@ -1,27 +1,24 @@
 ---
-import Badge from "./Badge.astro";
 import ExperienceIcon from "@icons/ExperienceIcon.astro";
+import ExperienceList from "./ExperienceList.astro";
 
-const { title, latest, time, description } = Astro.props;
+const { title, time } = Astro.props;
 ---
 
 <li class="ms-6">
   <span
-    class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900"
+    class="absolute flex items-center justify-center w-6 h-6 bg-yellow-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-yellow-900"
   >
     <ExperienceIcon />
   </span>
   <h3
-    class="flex items-center gap-2 mb-1 text-lg font-semibold text-gray-900 dark:text-white"
+    class="flex items-center gap-4 mb-1 text-lg font-semibold text-yellow-900 dark:text-yellow-600"
   >
     {title}
-    {latest && <Badge> Latest </Badge>}
   </h3>
-  <time
-    class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-    >{time}</time
+  <em
+    class="block mb-2 text-sm font-normal leading-none text-yellow-600 dark:text-yellow-900"
+    >{time}</em
   >
-  <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-    {description}
-  </p>
+  <ExperienceList />
 </li>
