@@ -5,16 +5,17 @@ import LinkedInIcon from "@icons/LinkedInIcon.astro";
 import SocialPill from "@components/SocialPill.astro";
 ---
 
-<nav class="grid place-content-center gap-8 font-bold">
-  <div class="flex gap-x-8">
-    <SocialPill href="https://www.linkedin.com/in/puntoenv/">
-      <LinkedInIcon class="size-6" />LinkedIn
-    </SocialPill>
-    <SocialPill href="https://www.github.com/puntoenv">
-      <GitHubIcon class="size-6" />GitHub
-    </SocialPill>
-    <SocialPill href="mailto:sebssjb@gmail.com">
-      <GmailIcon class="size-6" />sebssjb@gmail.com
-    </SocialPill>
-  </div>
+<nav class="flex sm:flex-row gap-4 font-bold">
+  <SocialPill href="https://www.linkedin.com/in/puntoenv/">
+    <LinkedInIcon class="size-6" />
+    <span class="hidden sm:block"> LinkedIn </span>
+  </SocialPill>
+  <SocialPill href="https://www.github.com/puntoenv">
+    <GitHubIcon class="size-6" />
+    <span class="hidden sm:block"> GitHub </span>
+  </SocialPill>
+  <SocialPill href="mailto:sebssjb@gmail.com">
+    <GmailIcon class="size-6" />
+    <span class="hidden sm:block"> sebssjb@gmail.com </span>
+  </SocialPill>
 </nav>

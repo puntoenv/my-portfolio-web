@@ -3,12 +3,14 @@
     "title": "Eva Seguros - Frontend Web Developer",
     "latest": true,
     "time": "febrero 2024 - julio 2024",
-    "description": "Como desarrollador frontend, mejoré la interfaz de usuario de aplicaciones web para la venta de seguros. Implementé formularios interactivos, colaboré en la creación de un Headless CMS con Strapi y desarrollé interfaces para un CRM, mejorando la visualización de datos. Tecnologías utilizadas: Next.js, React, Tailwind CSS, TypeScript."
+    "description": "Mejoras en la interfaz de usuario de aplicaciones web de venta de seguros, implementación de formularios interactivos, colaboración en la creación de un Headless CMS con Strapi y desarrollo de interfaces para un CRM, optimizando la visualización de datos.",
+    "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS"]
   },
   {
     "title": "Freelancer - Analista de Datos",
     "latest": false,
     "time": "febrero 2023 - febrero 2023",
-    "description": "Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages."
+    "description": "Organización y reconfiguración de datos para mejorar la precisión de los informes, así como análisis y presentación de datos, proporcionando visualizaciones claras y accionables para los clientes.",
+    "technologies": ["Excel", "Power BI"]
   }
 ]

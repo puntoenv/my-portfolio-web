@@ -3,16 +3,17 @@ import ExperienceItem from "@components/ExperienceItem.astro";
 import EXPERIENCE from "@data/experience.json";
 ---
 
+<h2 class="text-center text-2xl">MI EXPERIENCIA</h2>
 <ol
-  class="relative border-s border-gray-200 dark:border-gray-700 space-y-8 mt-4 pl-4"
+  class="text-base sm:text-xl relative border-s border-black/10 dark:border-white/10 pl-4 space-y-8"
 >
   {
-    EXPERIENCE.map(({ title, latest, time, description }) => (
+    EXPERIENCE.map(({ title, time, description, technologies }) => (
       <ExperienceItem
         title={title}
-        latest={latest}
         time={time}
         description={description}
+        technologies={technologies}
       />
     ))
   }

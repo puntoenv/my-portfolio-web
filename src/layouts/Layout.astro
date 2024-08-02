@@ -1,10 +1,16 @@
 ---
+import SpeedInsights from "@vercel/speed-insights/astro";
 import Header from "../components/Header.astro";
+
 interface Props {
   title: string;
   description: string;
 }
-const { title, description } = Astro.props;
+
+const {
+  props: { title, description },
+  generator,
+} = Astro;
 ---
 
 <!doctype html>
@@ -14,7 +20,7 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={generator} />
     <title>{title}</title>
     <script>
       localStorage.getItem("color-theme") === "dark" ||
@@ -24,9 +30,10 @@ const { title, description } = Astro.props;
         : document.documentElement.classList.remove("dark");
     </script>
   </head>
+  <SpeedInsights />
   <body class="relative">
     <div
-      class="absolute min-h-full w-full items-center p-4 bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+      class="absolute h-full w-full items-center overflow-y-scroll bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
     >
       <Header />
       <slot />

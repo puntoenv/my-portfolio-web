@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+
+const className = Astro.props.class as string;
+---
+
+<section
+  class:list={[
+    "flex flex-col gap-y-4 sm:gap-y-8 w-full mx-auto",
+    { [className]: Boolean(className) },
+  ]}
+>
+  <slot />
+</section>

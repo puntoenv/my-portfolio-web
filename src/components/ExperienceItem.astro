@@ -1,24 +1,33 @@
 ---
 import ExperienceIcon from "@icons/ExperienceIcon.astro";
-import ExperienceList from "./ExperienceList.astro";
 
-const { title, time } = Astro.props;
+interface Props {
+  title: string;
+  time: string;
+  description: string;
+  technologies: string[];
+}
+
+const { title, time, description, technologies } = Astro.props;
+const usedTechnologies = new Intl.ListFormat("es").format(technologies);
 ---
 
-<li class="ms-6">
+<li class="ms-6 grid gap-y-4">
   <span
-    class="absolute flex items-center justify-center w-6 h-6 bg-yellow-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-yellow-900"
+    class="absolute flex items-center justify-center w-6 h-6 bg-gray-600 rounded-full -start-3 ring-8 ring-gray-300 dark:ring-gray-900 dark:bg-gray-600"
   >
     <ExperienceIcon />
   </span>
-  <h3
-    class="flex items-center gap-4 mb-1 text-lg font-semibold text-yellow-900 dark:text-yellow-600"
-  >
+  <h3 class="text-lg sm:text-xl font-bold">
     {title}
   </h3>
-  <em
-    class="block mb-2 text-sm font-normal leading-none text-yellow-600 dark:text-yellow-900"
-    >{time}</em
-  >
-  <ExperienceList />
+  <em class="block text-sm sm:tsxt-base font-normal leading-none">
+    {time}
+  </em>
+  <p class="opacity-90 text-base sm:text-lg">
+    {description}
+    <br />
+    <strong> Technologias utilizadas: </strong>
+    {usedTechnologies}
+  </p>
 </li>

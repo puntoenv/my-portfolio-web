@@ -1,8 +1,14 @@
-<header class="flex justify-center items-center">
-  <nav class="flex flex-row gap-x-4">
-    <a href="/"> Home </a>
-    <a href="/about"> About </a>
-    <a href="/projects"> Projects </a>
-    <a href="/contact"> Contact </a>
+---
+import NavItem from "./NavItem.astro";
+---
+
+<header class="flex justify-center items-center sticky top-10 sm:top-16 z-50">
+  <nav
+    class="text-xs sm:text-base text-black/90 dark:text-white/90 flex flex-row gap-x-4 sm:gap-x-8 bg-gray-100 dark:bg-gray-900 py-2 px-3 rounded-full"
+  >
+    <NavItem href="/"> Home </NavItem>
+    <NavItem href="/about"> About </NavItem>
+    <NavItem href="/projects"> Projects </NavItem>
+    <NavItem href="/contact"> Contact </NavItem>
   </nav>
 </header>
