@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  userName: string;
+}
+
+const { userName } = Astro.props;
+---
+
+<article class="w-full grid">
+  <Image
+    class="rounded-full size-16 sm:size-24"
+    height={200}
+    width={200}
+    src={`/${userName}.webp`}
+    alt={userName}
+    loading="eager"
+  />
+</article>

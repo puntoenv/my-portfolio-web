@@ -1,33 +1,36 @@
 ---
-import ExperienceIcon from "@icons/ExperienceIcon.astro";
+import CalendarIcon from "@icons/CalendarIcon.astro";
+import Badge from "./Badge.astro";
 
 interface Props {
   title: string;
+  company: string;
   time: string;
   description: string;
-  technologies: string[];
+  index: number;
 }
 
-const { title, time, description, technologies } = Astro.props;
-const usedTechnologies = new Intl.ListFormat("es").format(technologies);
+const { title, company, time, description, index } = Astro.props;
 ---
 
-<li class="ms-6 grid gap-y-4">
+<li class="ms-6 grid gap-y-2">
   <span
-    class="absolute flex items-center justify-center w-6 h-6 bg-gray-600 rounded-full -start-3 ring-8 ring-gray-300 dark:ring-gray-900 dark:bg-gray-600"
+    class="absolute flex items-center justify-center w-6 h-6 bg-white/90 rounded-full -start-3 ring-8 ring-black/10 dark:ring-white/10 dark:bg-black/90"
   >
-    <ExperienceIcon />
+    <CalendarIcon class="size-2.5 sm:size-2.5" />
   </span>
-  <h3 class="text-lg sm:text-xl font-bold">
+  <h3 class="text-lg sm:text-xl font-bold flex items-center gap-x-2">
     {title}
+    {index === 0 && <Badge class="hidden sm:block">Latest</Badge>}
   </h3>
-  <em class="block text-sm sm:tsxt-base font-normal leading-none">
+  <span class="text-sm sm:text-lg">
+    {company}
+    {index === 0 && <Badge class="inline sm:hidden">Latest</Badge>}
+  </span>
+  <em class="block text-sm sm:text-base font-normal leading-none">
     {time}
   </em>
   <p class="opacity-90 text-base sm:text-lg">
     {description}
-    <br />
-    <strong> Technologias utilizadas: </strong>
-    {usedTechnologies}
   </p>
 </li>

@@ -1,5 +1,13 @@
+---
+interface Props {
+  class?: string;
+}
+
+const className = Astro.props.class ?? "";
+---
+
 <strong
-  class="border text-xs text-nowrap px-2.5 py-0.5 rounded border-white/10 dark:border-black/10 bg-black/10 dark:bg-white/10"
+  class:list={`w-fit border text-xs text-nowrap px-2.5 py-0.5 rounded border-white/10 dark:border-black/10 bg-black/10 dark:bg-white/10 ${className}`}
 >
   <slot />
 </strong>

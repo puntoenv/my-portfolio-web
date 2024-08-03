@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  userName: string;
+  generator: string;
+}
+
+const { title, description, canonical, userName, generator } = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="generator" content={generator} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`/${userName}.webp`} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${userName}`} />
+  <meta name="twitter:site" content={`@${userName}`} />
+  <meta name="twitter:creator" content={`@${userName}`} />
+  <script>
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  </script>
+</head>

@@ -1,19 +1,24 @@
 ---
 import ExperienceItem from "@components/ExperienceItem.astro";
 import EXPERIENCE from "@data/experience.json";
+import SuitcaseIcon from "@icons/SuitcaseIcon.astro";
 ---
 
-<h2 class="text-center text-2xl font-bold">MI EXPERIENCIA</h2>
+<header class="flex items-center gap-x-2 sm:gap-x-4">
+  <SuitcaseIcon class="size-6 sm:size-6" />
+  <h2 class="text-xl sm:text-2xl font-bold">EXPERIENCIA LABORAL</h2>
+</header>
 <ol
   class="text-base sm:text-xl relative border-s border-black/10 dark:border-white/10 pl-4 space-y-8"
 >
   {
-    EXPERIENCE.map(({ title, time, description, technologies }) => (
+    EXPERIENCE.map(({ title, company, time, description }, index) => (
       <ExperienceItem
+        index={index}
         title={title}
+        company={company}
         time={time}
         description={description}
-        technologies={technologies}
       />
     ))
   }

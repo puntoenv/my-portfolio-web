@@ -1,33 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import Pills from "../components/Pills.astro";
 import Banner from "../components/Banner.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "@components/SectionContainer.astro";
+import UserImage from "@components/UserImage.astro";
 ---
 
 <Layout
   title="Sebastian Peralta | Frontend Web Developer"
   description="Soy Sebastian Peralta, Frontend Web Developer con JavaScript, TypeScript, React y Next.js. Descubre proyectos innovadores y modernos que transforman la web."
   canonical="https://sebastianperalta.vercel.app/"
-  twitter="@puntoenv"
-  image="/puntoenv.webp"
+  userName="puntoenv"
 >
   <main
-    class="flex flex-col max-sm:gap-16 items-center mx-auto sm:w-[720px] px-6 py-8 sm:px-12 sm:py-6"
+    class="flex flex-col items-center mx-auto sm:w-[720px] px-3 py-2 sm:px-12 sm:py-8"
   >
     <SectionContainer>
-      <article class="w-full grid">
-        <Image
-          class="rounded-full size-16 sm:size-24"
-          height={200}
-          width={200}
-          src="/puntoenv.webp"
-          alt="puntoenv"
-          loading="eager"
-        />
-      </article>
+      <UserImage userName="puntoenv" />
       <h1 class="text-3xl sm:text-5xl font-bold">Sebastian Peralta</h1>
       <Banner />
       <Pills />

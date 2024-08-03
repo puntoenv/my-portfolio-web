@@ -1,50 +1,23 @@
 ---
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Header from "../components/Header.astro";
+import Head from "@components/Head.astro";
 
 interface Props {
   title: string;
   description: string;
   canonical: string;
-  twitter: string;
-  image: string;
+  userName: string;
 }
-
-const {
-  props: { title, description, canonical, twitter, image },
-  generator,
-} = Astro;
 ---
 
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="generator" content={generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-    <meta name="twitter:site" content={twitter} />
-    <meta name="twitter:creator" content={twitter} />
-    <script>
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? document.documentElement.classList.add("dark")
-        : document.documentElement.classList.remove("dark");
-    </script>
-  </head>
-  <body>
+  <Head {...Astro.props} generator={Astro.generator} />
+  <body class="relative">
     <SpeedInsights />
     <div
-      class="absolute h-dvh w-full items-center bg-white overflow-y-auto [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+      class="absolute inset-0 h-dvh w-full items-center bg-white dark:bg-black overflow-y-scroll [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
     >
       <Header />
       <slot />
