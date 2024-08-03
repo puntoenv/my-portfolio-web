@@ -4,24 +4,26 @@ import { Image } from "astro:assets";
 import Pills from "../components/Pills.astro";
 import Banner from "../components/Banner.astro";
 import Experience from "../components/Experience.astro";
-import HorizontalLine from "@components/HorizontalLine.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 ---
 
 <Layout
   title="Sebastian Peralta | Frontend Web Developer"
-  description="Soy Sebastian Peralta, Frontend Web Developer con JavaScript, TypeScript, React. Descubre proyectos innovadores y modernos que transforman la web."
+  description="Soy Sebastian Peralta, Frontend Web Developer con JavaScript, TypeScript, React y Next.js. Descubre proyectos innovadores y modernos que transforman la web."
+  canonical="https://sebastianperalta.vercel.app/"
+  twitter="@puntoenv"
+  image="/puntoenv.webp"
 >
   <main
-    class="flex flex-col max-sm:gap-16 items-center mx-auto lg:w-[720px] px-6 py-24 sm:py-48 sm:px-24 lg:px-12"
+    class="flex flex-col max-sm:gap-16 items-center mx-auto sm:w-[720px] px-6 py-8 sm:px-12 sm:py-6"
   >
     <SectionContainer>
       <article class="w-full grid">
         <Image
-          class="rounded-full size-16 sm:size-24 lg:size-32"
+          class="rounded-full size-16 sm:size-24"
           height={200}
           width={200}
-          src="https://github.com/puntoenv.png"
+          src="/puntoenv.webp"
           alt="puntoenv"
           loading="eager"
         />
@@ -30,10 +32,8 @@ import SectionContainer from "@components/SectionContainer.astro";
       <Banner />
       <Pills />
     </SectionContainer>
-    <HorizontalLine />
     <SectionContainer class="pl-4">
       <Experience />
     </SectionContainer>
-    <HorizontalLine />
   </main>
 </Layout>
