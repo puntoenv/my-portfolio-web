@@ -14,15 +14,15 @@ import UserImage from "@components/UserImage.astro";
   userName="puntoenv"
 >
   <main
-    class="flex flex-col items-center mx-auto sm:w-[720px] p-2 sm:px-12 sm:py-8"
+    class="flex flex-col items-center mx-auto lg:w-[720px] p-4 sm:p-8 lg:px-8"
   >
-    <SectionContainer>
+    <SectionContainer id="home">
       <UserImage userName="puntoenv" />
       <h1 class="text-3xl sm:text-5xl font-bold">Sebastian Peralta</h1>
       <Banner />
       <Pills />
     </SectionContainer>
-    <SectionContainer class="pl-4">
+    <SectionContainer id="experience" class="pl-4">
       <Experience />
     </SectionContainer>
   </main>
