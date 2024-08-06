@@ -6,8 +6,16 @@ html {
   font-family: "JetBrains Mono", "monospace";
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
+* {
+  scroll-behavior: smooth;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: unset;
+  }
 }

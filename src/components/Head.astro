@@ -3,11 +3,11 @@ interface Props {
   title: string;
   description: string;
   canonical: string;
-  userName: string;
+  twitter: string;
   generator: string;
 }
 
-const { title, description, canonical, userName, generator } = Astro.props;
+const { title, description, canonical, twitter, generator } = Astro.props;
 ---
 
 <head>
@@ -20,13 +20,13 @@ const { title, description, canonical, userName, generator } = Astro.props;
   <link rel="canonical" href={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={`/${userName}.webp`} />
+  <meta property="og:image" content="/puntoenv.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={`${userName}`} />
-  <meta name="twitter:site" content={`@${userName}`} />
-  <meta name="twitter:creator" content={`@${userName}`} />
+  <meta name="twitter:image" content="/puntoenv.webp" />
+  <meta name="twitter:site" content={twitter} />
+  <meta name="twitter:creator" content={twitter} />
   <script>
     window.matchMedia("(prefers-color-scheme: dark)").matches
       ? document.documentElement.classList.add("dark")

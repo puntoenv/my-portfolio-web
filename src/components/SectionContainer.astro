@@ -4,13 +4,12 @@ interface Props {
   id?: string;
 }
 
-const { id } = Astro.props;
-const className = Astro.props.class ?? "";
+const { id, class: className } = Astro.props;
 ---
 
 <section
-  id={id || ""}
-  class={`flex flex-col justify-center gap-y-4 sm:gap-y-8 w-full mx-auto pb-8 sm:pb-12 lg:pb-32 scroll-mt-24 lg:scroll-mt-48 ${className}`}
+  id={id}
+  class={`flex flex-col justify-center gap-y-4 sm:gap-y-8 w-full mx-auto pb-4 sm:pb-12 lg:pb-16 scroll-mt-24 sm:scroll-mt-16 lg:scroll-mt-32 ${className}`}
 >
   <slot />
 </section>
