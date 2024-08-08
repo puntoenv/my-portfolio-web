@@ -1,0 +1,17 @@
+---
+import SectionContainer from "@components/ui/SectionContainer.astro";
+import CodeIcon from "@icons/CodeIcon.astro";
+import List from "@components/ui/List.astro";
+import PROJECTS from "@data/projects.json";
+import ProjectItem from "./ProjectItem.astro";
+---
+
+<SectionContainer id="projects">
+  <header class="flex items-center gap-x-2 sm:gap-x-4 -ml-2 sm:-ml-3">
+    <CodeIcon class="size-4 sm:size-6" />
+    <h2 class="text-xl sm:text-2xl font-bold">PROJECTOS</h2>
+  </header>
+  <List>
+    {PROJECTS.map((project) => <ProjectItem {...project} />)}
+  </List>
+</SectionContainer>

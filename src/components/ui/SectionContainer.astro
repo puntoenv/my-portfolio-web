@@ -1,0 +1,18 @@
+---
+import HorizontalLine from "./HorizontalLine.astro";
+
+interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<section
+  id={id}
+  class={`flex flex-col justify-center gap-y-4 sm:gap-y-8 w-full mx-auto ml-2 scroll-mt-24 ${className}`}
+>
+  <slot />
+  <HorizontalLine />
+</section>

@@ -4,15 +4,13 @@ interface Props {
   description: string;
   canonical: string;
   twitter: string;
-  generator: string;
 }
 
-const { title, description, canonical, twitter, generator } = Astro.props;
+const { title, description, canonical, twitter } = Astro.props;
 ---
 
-<head>
+<>
   <meta charset="UTF-8" />
-  <meta name="generator" content={generator} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <title>{title}</title>
@@ -27,9 +25,5 @@ const { title, description, canonical, twitter, generator } = Astro.props;
   <meta name="twitter:image" content="/puntoenv.webp" />
   <meta name="twitter:site" content={twitter} />
   <meta name="twitter:creator" content={twitter} />
-  <script>
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.remove("dark");
-  </script>
-</head>
+  <slot />
+</>

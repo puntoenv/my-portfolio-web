@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  link: string;
+  github: string;
+  image: string;
+  tags: number[];
+}
+
+const { title, description } = Astro.props;
+---
+
+<li class="ms-5 relative">
+  <div class="grid gap-y-2 sm:ml-2">
+    <h3 class="font-bold">
+      {title}
+    </h3>
+    <p class="opacity-90 text-sm sm:text-lg">
+      {description}
+    </p>
+  </div>
+</li>

@@ -2,20 +2,22 @@
 import GitHubIcon from "@icons/GitHubIcon.astro";
 import GmailIcon from "@icons/GmailIcon.astro";
 import LinkedInIcon from "@icons/LinkedInIcon.astro";
-import SocialPill from "@components/SocialPill.astro";
+import SocialPill from "@components/ui/SocialPill.astro";
 ---
 
-<nav class="flex gap-4 font-bold [&_svg]:size-6">
+<nav
+  class="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-base font-bold [&_svg]:size-3 [&_svg]:sm:size-6"
+>
   <SocialPill href="https://www.linkedin.com/in/puntoenv/">
     <LinkedInIcon />
-    <span class="hidden sm:block"> LinkedIn </span>
+    LinkedIn
   </SocialPill>
   <SocialPill href="https://www.github.com/puntoenv">
     <GitHubIcon />
-    <span class="hidden sm:block"> GitHub </span>
+    GitHub
   </SocialPill>
   <SocialPill href="mailto:sebssjb@gmail.com">
     <GmailIcon />
-    <span class="hidden sm:block"> sebssjb@gmail.com </span>
+    sebssjb@gmail.com
   </SocialPill>
 </nav>

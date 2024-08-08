@@ -1,0 +1,17 @@
+---
+import SectionContainer from "@components/ui/SectionContainer.astro";
+import SuitcaseIcon from "@icons/SuitcaseIcon.astro";
+import EXPERIENCE from "@data/experience.json";
+import ExperienceItem from "./ExperienceItem.astro";
+import List from "@components/ui/List.astro";
+---
+
+<SectionContainer id="experience">
+  <header class="flex items-center gap-x-3 sm:gap-x-4 -ml-2 sm:-ml-3">
+    <SuitcaseIcon class="size-4 sm:size-6" />
+    <h2 class="text-xl sm:text-2xl font-bold">EXPERIENCIA</h2>
+  </header>
+  <List>
+    {EXPERIENCE.map((ex, index) => <ExperienceItem {...ex} index={index} />)}
+  </List>
+</SectionContainer>

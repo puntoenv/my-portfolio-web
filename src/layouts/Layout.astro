@@ -1,7 +1,7 @@
 ---
-import Footer from "@components/Footer.astro";
-import Header from "../components/Header.astro";
-import Head from "@components/Head.astro";
+import Footer from "@components/footer/Footer.astro";
+import Header from "@components/header/Header.astro";
+import Seo from "@components/seo/Seo.astro";
 
 interface Props {
   title: string;
@@ -13,12 +13,20 @@ interface Props {
 
 <!doctype html>
 <html lang="es">
-  <Head {...Astro.props} generator={Astro.generator} />
+  <head>
+    <meta name="generator" content={Astro.generator} />
+    <Seo {...Astro.props} />
+    <script>
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
+    </script>
+  </head>
   <body class="relative">
     <div
-      id="top"
       class="fixed sm:absolute inset-0 min-h-screen overflow-y-scroll items-center bg-white dark:bg-black [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] bg-cover"
     >
+      <a name="top"></a>
       <Header />
       <slot />
       <Footer />

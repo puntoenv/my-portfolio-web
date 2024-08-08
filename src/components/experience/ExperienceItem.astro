@@ -1,0 +1,64 @@
+---
+import Badge from "@components/ui/Badge.astro";
+import LinkIcon from "@icons/LinkIcon.astro";
+import { Image } from "astro:assets";
+interface Props {
+  title: string;
+  company: string;
+  link?: string;
+  time: string;
+  description: string;
+  image: string;
+  index: number;
+}
+const { title, company, link, time, description, image } = Astro.props;
+---
+
+<li class="ms-[19px] relative">
+  <div class="grid gap-y-2 sm:ml-2">
+    <h3 class="font-bold">
+      {title}
+      <span class="hidden sm:inline">
+        - {company}
+        {
+          link && (
+            <a href={link} rel="noopener noreferrer" target="_blank">
+              <Badge>
+                WEBSITE
+                <LinkIcon class="inline size-4 -mt-1" />
+              </Badge>
+            </a>
+          )
+        }
+      </span>
+    </h3>
+    <span class="sm:hidden flex items-center gap-x-2">
+      {company}
+      {
+        link && (
+          <a href={link} rel="noopener noreferrer" target="_blank">
+            <Badge>
+              WEBSITE
+              <LinkIcon class="inline size-4 -mt-1" />
+            </Badge>
+          </a>
+        )
+      }
+    </span>
+    <span class="text-sm sm:text-lg italic flex items-center gap-x-2">
+      {time}
+    </span>
+    <p class="opacity-90 text-sm sm:text-lg">
+      {description}
+    </p>
+    <article class="pr-2 sm:pr-4 lg:pr-8">
+      <Image
+        height="350"
+        width="700"
+        src={`/${image}.webp`}
+        alt={image}
+        class="border border-black/10 dark:border-white/10 rounded-2xl"
+      />
+    </article>
+  </div>
+</li>
