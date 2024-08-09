@@ -6,11 +6,8 @@ import PROJECTS from "@data/projects.json";
 import ProjectItem from "./ProjectItem.astro";
 ---
 
-<SectionContainer id="projects">
-  <header class="flex items-center gap-x-2 sm:gap-x-4 -ml-2 sm:-ml-3">
-    <CodeIcon class="size-4 sm:size-6" />
-    <h2 class="text-xl sm:text-2xl font-bold">PROJECTOS</h2>
-  </header>
+<SectionContainer id="projects" title="PROJECTOS">
+  <CodeIcon class="size-4 sm:size-6" slot="icon" />
   <List>
     {PROJECTS.map((project) => <ProjectItem {...project} />)}
   </List>

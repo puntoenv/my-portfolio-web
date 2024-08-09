@@ -6,11 +6,8 @@ import ExperienceItem from "./ExperienceItem.astro";
 import List from "@components/ui/List.astro";
 ---
 
-<SectionContainer id="experience">
-  <header class="flex items-center gap-x-3 sm:gap-x-4 -ml-2 sm:-ml-3">
-    <SuitcaseIcon class="size-4 sm:size-6" />
-    <h2 class="text-xl sm:text-2xl font-bold">EXPERIENCIA</h2>
-  </header>
+<SectionContainer id="experience" title="EXPERIENCIA">
+  <SuitcaseIcon class="size-4 sm:size-6" slot="icon" />
   <List>
     {EXPERIENCE.map((ex, index) => <ExperienceItem {...ex} index={index} />)}
   </List>

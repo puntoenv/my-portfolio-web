@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Full Stack Web Development",
+    "school": "Henry",
+    "link": "https://www.soyhenry.com/",
+    "time": "septiembre 2022 - febrero 2023",
+    "description": "Desarrollo de habilidades Full Stack Web mediante un sistema educativo modular, donde cada módulo es una parte fundamental de la programación web. El aprendizaje comienza con el frontend utilizando React, continúa con el backend empleando Express y culmina con bases de datos con PostgreSQL.",
+    "image": "image.webp"
+  },
+  {
+    "title": "Excel y Power BI",
+    "school": "USIL",
+    "link": "https://usil.edu.pe",
+    "time": "septiembre 2022 - febrero 2023",
+    "description": "Desarrollo especializado de habilidades en manejo y análisis de datos para su posterior reconfiguración y presentación. Se adquirieron diversas técnicas para generar datos utilizando Excel, y, posteriormente, mediante el aprendizaje de Power BI, se logró organizar y analizar estos datos para obtener un análisis final exhaustivo.",
+    "image": "image.webp"
+  }
+]
