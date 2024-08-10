@@ -3,12 +3,12 @@ import List from "@components/ui/List.astro";
 import SectionContainer from "@components/ui/SectionContainer.astro";
 import BookIcon from "@icons/BookIcon.astro";
 import EDUCATION from "@data/education.json";
-import EducationItem from "@components/education/EducationItem.astro";
+import ListItem from "@components/ui/ListItem.astro";
 ---
 
 <SectionContainer id="education" title="EDUCACIÓN">
   <BookIcon class="size-4 sm:size-6" slot="icon" />
   <List>
-    {EDUCATION.map((ed) => <EducationItem {...ed} />)}
+    {EDUCATION.map((item) => <ListItem {...item} />)}
   </List>
 </SectionContainer>

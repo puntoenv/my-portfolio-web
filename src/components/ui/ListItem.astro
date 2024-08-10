@@ -1,0 +1,86 @@
+---
+import Badge from "@components/ui/Badge.astro";
+import LinkIcon from "@icons/LinkIcon.astro";
+
+interface Props {
+  title: string;
+  institution?: string;
+  link?: string;
+  time?: string;
+  description: string;
+  technologies?: Array<string>;
+}
+
+const { title, description, institution, link, time, technologies } =
+  Astro.props;
+---
+
+<li class="grid gap-y-1 sm:gap-y-2 pl-[19px] sm:pl-[27px] lg:pl-7">
+  <h3 class="font-bold">
+    {title}
+    {
+      (institution || link) && (
+        <span class="hidden sm:inline-flex items-center gap-x-2">
+          {institution && `- ${institution}`}
+          {link && (
+            <a
+              href={link}
+              rel="noopener noreferrer"
+              target="_blank"
+              class="grid"
+            >
+              <Badge>
+                WEBSITE
+                <LinkIcon class="inline size-4 -mt-1" />
+              </Badge>
+            </a>
+          )}
+        </span>
+      )
+    }
+  </h3>
+  {
+    (institution || link) && (
+      <span class="sm:hidden flex items-center gap-x-2">
+        {institution && institution}
+        {link && (
+          <Badge>
+            <a href={link} rel="noopener noreferrer" target="_blank">
+              WEBSITE
+              <LinkIcon class="inline size-4 -mt-1" />
+            </a>
+          </Badge>
+        )}
+      </span>
+    )
+  }
+  {
+    time && (
+      <span class="text-sm sm:text-lg italic flex items-center gap-x-2">
+        {time}
+      </span>
+    )
+  }
+  <p class="opacity-90 text-sm sm:text-lg">
+    {description}
+  </p>
+  <!-- <article class="w-full mr-2 sm:mr-4 lg:mr-8 mt-2">
+      <Image
+        height="350"
+        width="700"
+        src={`/${image}.webp`}
+        alt={image}
+        class="aspect-video border border-black/10 dark:border-white/10 rounded-2xl"
+        loading="eager"
+      />
+    </article> -->
+  <div class="text-xs sm:text-sm flex items-center flex-wrap gap-2">
+    {
+      technologies?.map((tech) => (
+        <span class="grid place-content-center text-center py-1 px-2 rounded-3xl border border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10">
+          {tech}
+        </span>
+      ))
+    }
+  </div>
+</li>

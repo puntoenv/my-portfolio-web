@@ -1,17 +1,19 @@
 [
   {
     "title": "Frontend Web Developer",
-    "company": "Eva Seguros",
+    "institution": "Eva Seguros",
     "link": "https://www.evaseguros.es/",
     "time": "febrero 2024 - julio 2024",
     "description": "Desarrollo y mejora de la UI en aplicaciones web de venta de seguros. Creación de herramientas de comparación de seguros, implementación de formularios interactivos, desarrollo de una API REST con Strapi y diseño de interfaces gráficas para un CRM, optimizando la eficiencia en la venta de seguros",
-    "image": "eva-seguros"
+    "image": "eva-seguros",
+    "technologies": ["TypeScript", "Next.js", "Tailwind CSS", "Strapi"]
   },
   {
     "title": "Analista de Datos",
-    "company": "Freelance",
+    "institution": "Freelance",
     "time": "febrero 2023 - febrero 2023",
     "description": "Organización y reconfiguración de datos para informes precisos, visualizaciones claras y accionables, y presentaciones efectivas del producto, mejorando la toma de decisiones y estrategias para clientes y empleadores.",
-    "image": "power-bi"
+    "image": "power-bi",
+    "technologies": ["Excel", "Power BI"]
   }
 ]

@@ -1,12 +1,11 @@
 ---
 import { Image } from "astro:assets";
-
 const { class: className } = Astro.props;
 ---
 
 <article class={`w-full grid ${className}`}>
   <Image
-    class="rounded-full size-16 sm:size-24"
+    class="rounded-full size-16 sm:size-24 border border-black/10 dark:border-white/10"
     height={200}
     width={200}
     src="/puntoenv.webp"
