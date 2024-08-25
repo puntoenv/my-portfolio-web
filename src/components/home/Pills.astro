@@ -3,20 +3,30 @@ import GitHubIcon from "@icons/GitHubIcon.astro";
 import GmailIcon from "@icons/GmailIcon.astro";
 import LinkedInIcon from "@icons/LinkedInIcon.astro";
 import SocialPill from "@components/ui/SocialPill.astro";
+
+interface Props {
+  pillClass?: string;
+  pillsClass?: string;
+}
+
+const { pillClass, pillsClass } = Astro.props;
 ---
 
 <nav
-  class="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-base font-bold [&_svg]:size-3 [&_svg]:sm:size-6"
+  class=`${pillsClass? pillsClass + " " : ""}flex max-lg:justify-center flex-wrap gap-2 sm:gap-4 text-xs sm:text-base font-bold [&_svg]:size-3 [&_svg]:sm:size-6`
 >
-  <SocialPill href="https://www.linkedin.com/in/puntoenv/">
+  <SocialPill
+    href="https://www.linkedin.com/in/puntoenv/"
+    pillClass={pillClass}
+  >
     <LinkedInIcon />
     LinkedIn
   </SocialPill>
-  <SocialPill href="https://www.github.com/puntoenv">
+  <SocialPill href="https://www.github.com/puntoenv" pillClass={pillClass}>
     <GitHubIcon />
     GitHub
   </SocialPill>
-  <SocialPill href="mailto:sebssjb@gmail.com">
+  <SocialPill href="mailto:sebssjb@gmail.com" pillClass={pillClass}>
     <GmailIcon />
     sebssjb@gmail.com
   </SocialPill>
