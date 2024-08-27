@@ -1,7 +1,19 @@
 <a
   {...Astro.props}
   name="links"
-  class="hover:bg-black/10 hover:dark:bg-white/10 rounded-full px-3 py-1 lg:py-2 grid place-content-center"
+  class="hover:bg-black/10 hover:dark:bg-white/10 rounded-full py-1 px-2 sm:py-2 sm:px-4 grid place-content-center"
 >
   <slot />
 </a>
+
+<style is:inline>
+  .clicked {
+    background-color: #OOOOOO10;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .clicked {
+      background-color: #ffffff10;
+    }
+  }
+</style>
