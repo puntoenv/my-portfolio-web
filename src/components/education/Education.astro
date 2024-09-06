@@ -9,6 +9,6 @@ import ListItem from "@components/ui/ListItem.astro";
 <SectionContainer id="education" title="EDUCACIÓN">
   <BookIcon class="size-4 sm:size-6" slot="icon" />
   <List>
-    {EDUCATION.map((item) => <ListItem {...item} />)}
+    {EDUCATION.map((item, index) => <ListItem {...item} index={index} />)}
   </List>
 </SectionContainer>

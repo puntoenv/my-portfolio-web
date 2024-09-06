@@ -1,6 +1,7 @@
 ---
 import Badge from "@components/ui/Badge.astro";
 import LinkIcon from "@icons/LinkIcon.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   title: string;
@@ -9,10 +10,20 @@ interface Props {
   time?: string;
   description: string;
   technologies?: Array<string>;
+  image?: string;
+  index: number;
 }
 
-const { title, description, institution, link, time, technologies } =
-  Astro.props;
+const {
+  title,
+  description,
+  institution,
+  link,
+  time,
+  technologies,
+  image,
+  index,
+} = Astro.props;
 ---
 
 <li class="grid gap-y-1 sm:gap-y-2 pl-[19px] sm:pl-[27px] lg:pl-7">
@@ -64,7 +75,40 @@ const { title, description, institution, link, time, technologies } =
   <p class="opacity-90 text-sm sm:text-lg">
     {description}
   </p>
-  <!-- <article class="w-full mr-2 sm:mr-4 lg:mr-8 mt-2">
+  <div
+    class:list={[
+      "mt-2 sm:mt-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-8",
+      {
+        "justify-start": index % 2 === 0,
+        "justify-end": index % 2 === 0,
+      },
+    ]}
+  >
+    <div
+      class:list={[
+        "w-11/12 sm:w-1/2 h-min text-xs sm:text-sm flex items-center flex-wrap gap-2 sm:gap-4 justify-center",
+        {
+          // "sm:items-end": index % 2 === 0,
+          // "sm:items-start": index % 2 !== 0,
+        },
+      ]}
+    >
+      {
+        technologies?.map((tech) => (
+          <span class="grid place-content-center text-xs font-bold text-center py-1 p-2 rounded-3xl border border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+    <article
+      class:list={[
+        "w-11/12 sm:w-1/2 max-sm:order-first",
+        {
+          "sm:order-first": index! % 2 > 0,
+        },
+      ]}
+    >
       <Image
         height="350"
         width="700"
@@ -73,14 +117,6 @@ const { title, description, institution, link, time, technologies } =
         class="aspect-video border border-black/10 dark:border-white/10 rounded-2xl"
         loading="eager"
       />
-    </article> -->
-  <div class="text-xs sm:text-sm flex items-center flex-wrap gap-2">
-    {
-      technologies?.map((tech) => (
-        <span class="grid place-content-center text-center py-1 px-2 rounded-3xl border border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10">
-          {tech}
-        </span>
-      ))
-    }
+    </article>
   </div>
 </li>

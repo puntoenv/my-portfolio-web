@@ -9,6 +9,6 @@ import ListItem from "@components/ui/ListItem.astro";
 <SectionContainer id="experience" title="EXPERIENCIA">
   <SuitcaseIcon class="size-4 sm:size-6" slot="icon" />
   <List>
-    {EXPERIENCE.map((ex) => <ListItem {...ex} />)}
+    {EXPERIENCE.map((ex, index) => <ListItem {...ex} index={index} />)}
   </List>
 </SectionContainer>
