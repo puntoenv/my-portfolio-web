@@ -2,6 +2,7 @@
 import Footer from "@components/footer/Footer.astro";
 import Header from "@components/header/Header.astro";
 import Seo from "@components/seo/Seo.astro";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface Props {
   title: string;
@@ -28,6 +29,7 @@ interface Props {
     >
       <Header />
       <slot />
+      <SpeedInsights />
       <Footer />
     </div>
   </body>
