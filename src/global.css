@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light dark;
+}
+html {
+  font-family: "JetBrains Mono", "monospace";
+}
+* {
+  scroll-behavior: smooth;
+}
+p {
+  text-wrap: pretty;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: unset;
+  }
+}

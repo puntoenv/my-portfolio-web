@@ -15,6 +15,7 @@ interface Props {
 <html lang="es">
   <head>
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/global.css" />
     <Seo {...Astro.props} />
     <script>
       window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -33,23 +34,3 @@ interface Props {
     </div>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    color-scheme: light dark;
-  }
-  html {
-    font-family: "JetBrains Mono", "monospace";
-  }
-  * {
-    scroll-behavior: smooth;
-  }
-  p {
-    text-wrap: pretty;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      scroll-behavior: unset;
-    }
-  }
-</style>
