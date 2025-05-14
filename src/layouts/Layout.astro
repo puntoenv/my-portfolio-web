@@ -1,4 +1,5 @@
 ---
+import Analytics from "@vercel/analytics/astro";
 import Footer from "@components/footer/Footer.astro";
 import Header from "@components/header/Header.astro";
 import Seo from "@components/seo/Seo.astro";
@@ -15,7 +16,6 @@ interface Props {
 <html lang="es">
   <head>
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/src/global.css" />
     <Seo {...Astro.props} />
     <script>
       window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -24,13 +24,38 @@ interface Props {
     </script>
   </head>
   <body class="relative">
-    <div
-      class="absolute h-screen w-full overflow-y-scroll bg-white dark:bg-black [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+    <main
+      class="h-dvh w-full overflow-y-auto bg-white dark:bg-black [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] bg-cover bg-fixed bg-center"
     >
       <Header />
       <slot />
       <SpeedInsights />
       <Footer />
-    </div>
-  </body>
+      <Analytics />
+    </main>
+  </body><style is:global>
+    @import "tailwindcss";
+
+    :root {
+      color-scheme: light dark;
+    }
+
+    html {
+      font-family: "JetBrains Mono", "monospace";
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: unset;
+      }
+    }
+  </style>
 </html>

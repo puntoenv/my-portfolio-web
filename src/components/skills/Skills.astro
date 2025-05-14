@@ -1,7 +1,11 @@
 ---
 import SectionContainer from "@components/ui/SectionContainer.astro";
 import PowerIcon from "@icons/PowerIcon.astro";
-const skillsIcons = await Astro.glob("@icons/skills/*.astro");
+import type { AstroInstance } from "astro";
+const iconsMap = import.meta.glob("@icons/skills/*.astro", {
+  eager: true,
+});
+const skillsIcons = Object.values(iconsMap) as AstroInstance[];
 ---
 
 <SectionContainer id="skills" title="HABILIDADES">
