@@ -12,12 +12,12 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@fontsource/jetbrains-mono": "^5.2.5",
-    "@tailwindcss/vite": "^4.1.6",
+    "@tailwindcss/vite": "^4.1.7",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.7.12",
+    "astro": "^5.8.0",
     "prettier-plugin-astro": "^0.14.1",
-    "tailwindcss": "^4.1.6",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3"
   }
 }

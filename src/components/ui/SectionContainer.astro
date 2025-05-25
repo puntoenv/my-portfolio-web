@@ -10,7 +10,13 @@ const { id, class: className, title } = Astro.props;
 
 <section
   id={id}
-  class={`flex flex-col gap-y-4 justify-center w-full mx-auto scroll-mt-16 lg:scroll-mt-32 ${className ?? ""} ${title ? "px-2 sm:px-3" : ""} text-left`}
+  class:list={[
+    "flex flex-col gap-y-4 justify-center w-full mx-auto scroll-mt-16 lg:scroll-mt-32 text-left",
+    {
+      "px-2 sm:px-3": title,
+    },
+    className,
+  ]}
 >
   {
     title && (

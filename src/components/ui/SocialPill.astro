@@ -11,7 +11,10 @@ const { href, pillClass } = Astro.props;
   href={href}
   target="_blank"
   rel="noopener noreferrer"
-  class=`${pillClass ? pillClass : "text-black/90 dark:text-white/90 py-1 px-2 sm:py-2 sm:px-4 rounded-full border-2 border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10 flex justify-center items-center gap-x-1 sm:gap-x-2 lg:hover:scale-105 lg:hover:bg-white/10 lg:dark:hover:bg-black/10 lg:transition-all"}`
+  class:list={[
+    "text-black/90 dark:text-white/90 py-1 px-2 sm:py-2 sm:px-4 rounded-full border-2 border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10 flex justify-center items-center gap-x-1 sm:gap-x-2 lg:hover:scale-105 lg:hover:bg-white/10 lg:dark:hover:bg-black/10 lg:transition-all",
+    pillClass,
+  ]}
 >
   <slot />
 </a>
